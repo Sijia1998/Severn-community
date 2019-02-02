@@ -1,2 +1,2 @@
-# Severn-community
-基于react、ant-desing、koa2
+## 基于 React、Ant-Design、Koa2 实现一个技术社区
+

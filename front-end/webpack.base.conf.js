@@ -16,6 +16,11 @@ module.exports = {
     // 出口文件使用name+hash命名这样每次修改代码打包以后名字都会不一样
     filename: '[name].[hash].js'
   },
+  devtool: 'source-map',
+  // resolve: {
+  //   // changed from extensions: [".js", ".jsx"]
+  //   extensions: ['.ts', '.tsx', '.js', '.jsx']
+  // },
   // 模块
   module: {
     rules: [
@@ -58,15 +63,6 @@ module.exports = {
         use: ['file-loader']
       }
     ],
-    // resolve: {
-    //   alias: {
-    //     utils: path.resolve(__dirname, 'src/utils'), // 这里使用 path.resolve 和 __dirname 来获取绝对路径
-    //   },
-    //   extensions: ['.js', '.json', '.jsx', '.css', '.less'],
-    //   modules: [
-    //     path.resolve(__dirname, 'node_modules'), // 指定当前目录下的 node_modules 优先查找
-    //   ],
-    // },
   },
 
   plugins: [

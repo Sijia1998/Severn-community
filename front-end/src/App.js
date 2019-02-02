@@ -1,13 +1,16 @@
 import React, { Component } from 'react';
+import { Provider } from 'mobx-react';
+import Layout from './components/layout';
 import store from './store';
-import View from './components/TodoView';
+
 import styles from './App.less';
 
 class App extends Component {
   render() {
     return <div className={styles['content-inner']}>
-      <h1 className="fontStyle">Hello---React-Cli</h1>
-      <View store={store}></View>
+      <Provider store={store}>
+        <Layout>123</Layout>
+      </Provider>
     </div>;
   }
 }

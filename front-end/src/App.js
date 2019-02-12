@@ -1,16 +1,27 @@
 import React, { Component } from 'react';
-import { Provider } from 'mobx-react';
-import Layout from './components/layout';
-import store from './store';
-import styles from './App.less';
+import logo from './logo.svg';
+import './App.css';
 
 class App extends Component {
   render() {
-    return <div className={styles['content-inner']}  className="wrapper">
-      <Provider store={store}>
-        <Layout>123</Layout>
-      </Provider>
-    </div>;
+    return (
+      <div className="App">
+        <header className="App-header">
+          <img src={logo} className="App-logo" alt="logo" />
+          <p>
+            Edit <code>src/App.js</code> and save to reload.
+          </p>
+          <a
+            className="App-link"
+            href="https://reactjs.org"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Learn React
+          </a>
+        </header>
+      </div>
+    );
   }
 }
 

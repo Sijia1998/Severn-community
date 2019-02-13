@@ -1,7 +1,21 @@
 import React, { Component } from 'react';
 import { observer, inject } from 'mobx-react';
-import { Route, withRouter, Switch, Redirect } from 'react-router-dom';
+import { Route, Switch, HashRouter as Router } from 'react-router-dom';
 import { Menu, Icon, Button } from 'antd';
+// import routes from '../../router/routes';
+
+import Footer from 'src/components/footer';
+import Header from 'src/components/header';
+import SiderBar from 'src/components/siderBar';
+const routes = [
+  {
+    path: '/',
+    component: Header,
+    exact: true
+  },
+  { path: '/footer', component: Footer, exact: true },
+  { path: '/footer/siderbar', component: SiderBar, exact: true }
+];
 
 const { Item: MenuItem, SubMenu } = Menu;
 
@@ -24,7 +38,21 @@ class SideBar extends Component {
   render() {
     return (
       <div style={{ width: 256 }}>
-        <Button
+        <Router>
+          <div>
+            {routes.map((route, index) => {
+              return (
+                <Route
+                  key={index}
+                  path={route.path}
+                  exact={route.exact}
+                  component={route.component}
+                />
+              );
+            })}
+          </div>
+        </Router>
+        {/* <Button
           type="primary"
           onClick={this.toggleCollapsed}
           style={{ marginBottom: 16 }}
@@ -36,9 +64,9 @@ class SideBar extends Component {
           mode="inline"
           theme="dark"
           inlineCollapsed={this.state.collapsed}
-        >
-          {/* {meuns} */}
-          {/* <Menu.Item key="1">
+        > */}
+        {/* {meuns} */}
+        {/* <Menu.Item key="1">
             <Icon type="pie-chart" />
             <span>Option 1</span>
           </Menu.Item>
@@ -80,7 +108,7 @@ class SideBar extends Component {
               <Menu.Item key="12">Option 12</Menu.Item>
             </SubMenu>
           </SubMenu> */}
-        </Menu>
+        {/* </Menu> */}
       </div>
     );
   }

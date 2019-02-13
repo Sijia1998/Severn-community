@@ -1,0 +1,8 @@
+{
+  "editor.fontSize": 16,
+  "editor.formatOnSave": true,
+  // Use single quotes instead of double quotes in JSX
+  "prettier.jsxSingleQuote": true,
+  // If true, will use single instead of double quotes
+  "prettier.singleQuote": true
+}

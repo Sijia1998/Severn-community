@@ -1,0 +1,13 @@
+@lineHeight: 80px;
+
+.testStyle {
+  line-height: 80px !important;
+}
+.menu-wrapper {
+  line-height: lineHeight !important;
+  :global {
+    .ant-menu {
+      line-height: 80px;
+    }
+  }
+}

@@ -1,12 +1,14 @@
-import React from "react";
-import { HashRouter } from "react-router-dom";
-import { history } from "src/router";
-import Layout from "./layout";
+import React, { Component } from 'react';
+import Header from '../components/header';
 
-const App = () => (
-  <HashRouter history={history}>
-    <Layout />
-  </HashRouter>
-);
+class App extends Component {
+  render() {
+    return (
+      <div>
+        <Header />
+      </div>
+    );
+  }
+}
 
 export default App;
